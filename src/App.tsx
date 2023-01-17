@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-const Stack = createNativeStackNavigator();
+import { createStackNavigator } from '@react-navigation/stack';
+const Stack = createStackNavigator();
 
 function HomeScreen(props: any) {
   return (
