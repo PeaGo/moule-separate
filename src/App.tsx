@@ -34,7 +34,7 @@ function SettingScreen(props: any) {
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="SettingScreen" component={SettingScreen} />
