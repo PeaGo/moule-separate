@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'module-separate';
+import App_, { multiply } from 'module-separate';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -10,11 +11,7 @@ export default function App() {
     multiply(3, 7).then(setResult);
   }, []);
 
-  return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+  return <App_ />;
 }
 
 const styles = StyleSheet.create({
