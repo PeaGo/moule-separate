@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Alert } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Axios from 'axios';
+
 const Stack = createStackNavigator();
 
 function HomeScreen(props: any) {
@@ -19,6 +22,15 @@ function HomeScreen(props: any) {
 }
 
 function SettingScreen(props: any) {
+  React.useEffect(() => {
+    Axios.get('https://api.themoviedb.org/3/movie/')
+      .then((response) => {
+        Alert.alert('Success');
+      })
+      .catch((err) => {
+        Alert.alert('Error');
+      });
+  }, []);
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Setting Screen</Text>
